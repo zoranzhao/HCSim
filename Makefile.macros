@@ -1,0 +1,13 @@
+# SystemC path
+SYSTEMC_DIR=/home/slam/OMNET/systemc-2.3.1
+TLM_INC=/home/slam/OMNET/systemc-2.3.1
+
+# Compiler
+CC	= g++
+
+# Utilities
+RM	= rm
+SED	= sed
+CHMOD	= chmod
+LN	= ln -s
+TIME	= /usr/bin/time

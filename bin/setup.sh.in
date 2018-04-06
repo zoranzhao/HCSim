@@ -1,0 +1,13 @@
+
+echo "Setting LIBRARY PATHS!"
+
+# define the HCSim home directory
+export HCSIM; HCSIM=@HCSIM@
+echo $HCSIM
+
+# extend the search path for dynamically-linked libraries
+if [ -z "$LD_LIBRARY_PATH" ]; then
+	export LD_LIBRARY_PATH; LD_LIBRARY_PATH=$HCSIM/lib;
+else
+	export LD_LIBRARY_PATH; LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HCSIM/lib;
+fi
