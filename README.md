@@ -1,7 +1,8 @@
-#HOST-COMPILED MULTI-CORE SYSTEM SIMULATOR 
+# HCSim 
+HOST-COMPILED MULTI-CORE SYSTEM SIMULATOR 
 =========================================
 
-This is the release of the HCSim-1.0 simulator.
+This is the release of the HCSim-1.1 simulator.
 
 This folder contains abstract models of real-time operating systems (RTOS) and 
 high-level multi-core processor models for full-system host-compiled simulation [1]. 
@@ -11,13 +12,13 @@ Building and installing:
 ------------------------
 
 Build requirements:
-  - SystemC version 2.2.0 or 2.3.0  http://www.accellera.org/
+  - SystemC version 2.3.1  http://www.accellera.org/
   - TLM 2.0 http://www.accellera.org/
 
 Preparation before build:
   - Edit Makefile.macros. Set the following variables (external dependencies):
-      SYSTEMC_DIR - to the installation directory of SystemC-2.2.0 or SystemC-2.3.0
-      TLM_DIR - to the installation directory of TLM-2.0  
+      SYSTEMC_DIR - to the installation directory of SystemC-2.3.1
+      TLM_DIR - to the installation directory of SystemC-2.3.1 (Includes TLM)  
 
 Build hcsim library:
   % make clean
@@ -42,6 +43,7 @@ To run examples locally:
 
 Directories:
 ------------
+'''
   include/                   -- Header files
     OS/                         - OS models
     Processor/                  - processor components models
@@ -57,7 +59,7 @@ Directories:
   lib/                       -- symbolic link to hcsim library
   bin/                       -- public executable (set set symbolic link to the library)
   utilities/                 -- Design templates
-
+'''
 References:
 -----------
 [1] P. Razaghi, A. Gerstlauer, "Host-Compiled Multi-Core System Simulation
@@ -66,4 +68,5 @@ References:
 
 --
 Parisa Razaghi <parisa.r@utexas.edu>
+Zhuoran Zhao <zhuoran@utexas.edu>
 Andreas Gerstlauer <gerst@ece.utexas.edu>    
