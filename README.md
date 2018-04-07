@@ -43,7 +43,7 @@ To run examples locally:
 
 Directories:
 ------------
-'''
+```
   include/                   -- Header files
     OS/                         - OS models
     Processor/                  - processor components models
@@ -59,7 +59,7 @@ Directories:
   lib/                       -- symbolic link to hcsim library
   bin/                       -- public executable (set set symbolic link to the library)
   utilities/                 -- Design templates
-'''
+```
 References:
 -----------
 [1] P. Razaghi, A. Gerstlauer, "Host-Compiled Multi-Core System Simulation
