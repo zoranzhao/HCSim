@@ -1,5 +1,5 @@
 # HCSim 
-HOST-COMPILED MULTI-CORE SYSTEM SIMULATOR 
+# HOST-COMPILED MULTI-CORE SYSTEM SIMULATOR 
 =========================================
 
 This is the release of the HCSim-1.1 simulator.
@@ -8,7 +8,7 @@ This folder contains abstract models of real-time operating systems (RTOS) and
 high-level multi-core processor models for full-system host-compiled simulation [1]. 
 
 
-Building and installing:
+## Building and installing:
 ------------------------
 
 Build requirements:
@@ -25,7 +25,7 @@ Build hcsim library:
   % make all
 
 
-Running:
+## Running:
 --------
 
 Before run an example:
@@ -41,7 +41,7 @@ To run examples locally:
   - example/mix_taskset_tlm2.0
     
 
-Directories:
+## Directories:
 ------------
 ```
   include/                   -- Header files
@@ -60,13 +60,12 @@ Directories:
   bin/                       -- public executable (set set symbolic link to the library)
   utilities/                 -- Design templates
 ```
-References:
+## References:
 -----------
 [1] P. Razaghi, A. Gerstlauer, "Host-Compiled Multi-Core System Simulation
     for Early Real-Time Performance Evaluation," ACM Transactions on Embedded
     Computer Systems, 2014.
 
---
-Parisa Razaghi <parisa.r@utexas.edu>
-Zhuoran Zhao <zhuoran@utexas.edu>
-Andreas Gerstlauer <gerst@ece.utexas.edu>    
+-Parisa Razaghi <parisa.r@utexas.edu>
+-Zhuoran Zhao <zhuoran@utexas.edu>
+-Andreas Gerstlauer <gerst@ece.utexas.edu>    
