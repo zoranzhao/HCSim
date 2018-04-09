@@ -1,6 +1,6 @@
 # HCSim 
 # HOST-COMPILED MULTI-CORE SYSTEM SIMULATOR:
-===========================================
+--------------------------------------------
 
 This is the release of the HCSim-1.1 simulator.
 
@@ -27,6 +27,7 @@ Build hcsim library:
 
 ## Running:
 --------
+```
 
 Before run an example:
    % source <install_path>/bin/setup.sh
@@ -39,7 +40,8 @@ To run examples locally:
   - examples/simple_taskset
   - examples/mix_taskset
   - example/mix_taskset_tlm2.0
-    
+```
+ 
 
 ## Directories:
 ------------
