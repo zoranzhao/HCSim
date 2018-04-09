@@ -14,13 +14,15 @@ Build requirements:
 
 Preparation before build:
   - Edit Makefile.macros. Set the following variables (external dependencies):
-      SYSTEMC_DIR - to the installation directory of SystemC-2.3.1
-      TLM_DIR - to the installation directory of SystemC-2.3.1 (Includes TLM)  
-
+```
+      -SYSTEMC_DIR - to the installation directory of SystemC-2.3.1
+      -TLM_DIR - to the installation directory of SystemC-2.3.1 (Includes TLM)  
+```
 Build hcsim library:
+```
   % make clean
   % make all
-
+```
 ## Running:
 ```
 Before run an example:
@@ -57,7 +59,7 @@ To run examples locally:
 [1] P. Razaghi, A. Gerstlauer, "Host-Compiled Multi-Core System Simulation
     for Early Real-Time Performance Evaluation," ACM Transactions on Embedded
     Computer Systems, 2014.
-------------
+    
 ## Contacts:
 * Parisa Razaghi <parisa.r@utexas.edu>
 * Zhuoran Zhao <zhuoran@utexas.edu>
