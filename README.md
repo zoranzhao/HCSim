@@ -66,6 +66,6 @@ To run examples locally:
     for Early Real-Time Performance Evaluation," ACM Transactions on Embedded
     Computer Systems, 2014.
 
--Parisa Razaghi <parisa.r@utexas.edu>
--Zhuoran Zhao <zhuoran@utexas.edu>
--Andreas Gerstlauer <gerst@ece.utexas.edu>    
+*Parisa Razaghi <parisa.r@utexas.edu>
+*Zhuoran Zhao <zhuoran@utexas.edu>
+*Andreas Gerstlauer <gerst@ece.utexas.edu>    
