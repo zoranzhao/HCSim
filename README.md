@@ -1,6 +1,6 @@
 # HCSim 
-# HOST-COMPILED MULTI-CORE SYSTEM SIMULATOR 
-=========================================
+# HOST-COMPILED MULTI-CORE SYSTEM SIMULATOR:
+===========================================
 
 This is the release of the HCSim-1.1 simulator.
 
@@ -65,7 +65,9 @@ To run examples locally:
 [1] P. Razaghi, A. Gerstlauer, "Host-Compiled Multi-Core System Simulation
     for Early Real-Time Performance Evaluation," ACM Transactions on Embedded
     Computer Systems, 2014.
-
+    
+## Contacts:
+-----------
 * Parisa Razaghi <parisa.r@utexas.edu>
 * Zhuoran Zhao <zhuoran@utexas.edu>
 * Andreas Gerstlauer <gerst@ece.utexas.edu>    
