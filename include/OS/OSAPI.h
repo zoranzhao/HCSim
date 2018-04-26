@@ -54,7 +54,7 @@ class OSAPI
      ************************/   
     virtual OSProc createIntrTask(const char *name, unsigned int priority,
 								  sc_dt::uint64 affinity, uint8_t init_core, uint8_t init_launched_core) = 0;
-	virtual void intrTrigger(OSProc intrID, uint8_t launcedCore) = 0;
+    virtual void intrTrigger(OSProc intrID, uint8_t launcedCore) = 0;
     virtual void intrSleep(OSProc intrID) = 0;
     virtual OSProc createIntrHandler(uint8_t coreID, unsigned int priority) = 0;
     virtual void iEnter(uint8_t coreID, OSProc handlerID) = 0;
@@ -67,8 +67,8 @@ class OSAPI
     virtual sc_dt::uint64 getStartCycle(OSProc tID) = 0;
     virtual void resetStartCycle(OSProc tID) = 0;
 #ifdef OS_STATISTICS_ON
- 	virtual unsigned long getTaskContextSwitches(uint8_t coreID) = 0;
- 	virtual unsigned long getOSContextCalled(uint8_t coreID) = 0;    
+    virtual unsigned long getTaskContextSwitches(uint8_t coreID) = 0;
+    virtual unsigned long getOSContextCalled(uint8_t coreID) = 0;    
     virtual sc_dt::uint64 getBusyTime(uint8_t coreID) = 0;
     virtual sc_dt::uint64 getFallbackTime(uint8_t coreID) = 0;
     virtual void debugPrint()=0;
