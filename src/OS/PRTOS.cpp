@@ -1110,6 +1110,37 @@ void RTOS::postWait(OSProc proc)
     //std::cout<<"postWait: "<<proc<<std::endl;
     wait4Sched(proc);
 }
+
+void RTOS::postWaitWithSWIntr(OSProc proc)
+{
+    uint8_t core_id;
+    
+    assert( os_vdes[proc].type != OS_INTR_HANDLER );
+    core_id = os_vdes[proc].schedcore;
+    if (os_vdes[proc].state == OS_WAIT) {
+   
+        os_vdes[proc].state = OS_READY;
+        extractTask(proc, &os_wait_queue[core_id]);
+        if (os_vdes[proc].ts == sc_dt::UINT64_ZERO) {
+	    //std::cout<<sc_core::sc_get_current_process_handle().name() <<"READYQUEUE, insertEnd"<<"\n";
+            insertEndPriority(proc, &os_ready_queue[core_id]);
+            os_vdes[proc].ts = os_vdes[proc].dts;
+        }
+        else{
+
+	    //std::cout<<sc_core::sc_get_current_process_handle().name() <<"READYQUEUE, insertBegin, postWait"<<"\n";
+            insertBeginPriority(proc, &os_ready_queue[core_id]);
+
+   	}
+        if (os_current[core_id] == OS_NO_TASK)
+            dispatch(core_id);    
+        else{
+            os_intrhandler_event_list[core_id].notify(); 
+        }
+    } 
+    wait4Sched(proc);
+}
+
 /*
  *
  */

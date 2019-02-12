@@ -44,6 +44,7 @@ class OSAPI
      ************************/ 
     virtual void preWait(OSProc tID, OSProc blocking_tID) = 0;
     virtual void postWait(OSProc tID) = 0;
+    virtual void postWaitWithSWIntr(OSProc tID) = 0;
     virtual void preNotify(OSProc tID, OSProc blocked_tID) = 0;
     virtual void postNotify(OSProc tID, OSProc blocked_tID) = 0;
     virtual void timeWait(sc_dt::uint64 sec, OSProc tID) = 0;

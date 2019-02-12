@@ -49,6 +49,7 @@ class RTOS
     void taskKill(OSProc tID);
     void preWait(OSProc tID, OSProc btID);
     void postWait(OSProc tID);
+    void postWaitWithSWIntr(OSProc tID);
     void preNotify(OSProc tID, OSProc btID);
     void postNotify(OSProc tID, OSProc btID);
     void timeWait(sc_dt::uint64 sec, OSProc p);
