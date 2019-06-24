@@ -505,12 +505,15 @@ bool RTOS::checkIntrDependency(OSProc proc)
  */
 void RTOS::wait4Sched(OSProc proc)
 {
-    //std::cout << "Task" << proc << "wait4Sched"  <<std::endl;
+    //if(NodeID==0&&proc==7) std::cout << "Task " << proc << " stoped at time" <<  sc_core::sc_time_stamp().to_seconds() <<std::endl;
+    //if(NodeID==0&&proc==8) std::cout << "Task " << proc << " stoped at time" <<  sc_core::sc_time_stamp().to_seconds() <<std::endl;
     assert( proc < OS_MAXPROC );
     do {
         os_sched_event_list[proc].receive();
     } while((os_vdes[proc].state != OS_RUN) && (os_vdes[proc].state != OS_CPU));
     os_vdes[proc].state = OS_CPU;
+    //if(NodeID==0&&proc==7) std::cout << "Task " << proc << " started at time" <<  sc_core::sc_time_stamp().to_seconds() <<std::endl;
+    //if(NodeID==0&&proc==8) std::cout << "Task " << proc << " started at time" <<  sc_core::sc_time_stamp().to_seconds() <<std::endl;
 }
 /*
  * Send scheduled event.
@@ -576,7 +579,6 @@ void RTOS::dispatch(uint8_t core_id)
 
             proc = getFirstTask(&os_ready_queue[core_id]);
 
-
 //***********************************************************
 //***********************************************************
 //    while(temp!=OS_NO_TASK){
@@ -598,13 +600,27 @@ void RTOS::dispatch(uint8_t core_id)
         else
             os_current[core_id] = OS_NILL;
 
+            if (last_sched_task[core_id] != os_current[core_id]) {
+	   	//std::cout<< "Device ID is: "<< NodeID << ", Core: "<< int(core_id) << ": "<< os_current[core_id] << ":" << sc_core::sc_time_stamp().value() << std::endl;
+		if(NodeID==0)//print out the client context switches
+		{
+                 if((last_sched_task[core_id]==7||last_sched_task[core_id]==8) || (os_current[core_id]==7||os_current[core_id]==8)) {
+		  //std::cout <<  "Context switches happen at time: " << sc_core::sc_time_stamp().to_seconds() <<std::endl;
+	   	  //std::cout << "Switch: " << last_sched_task[core_id] << "->" << os_current[core_id] << " : " << sc_core::sc_time_stamp().to_seconds() << std::endl;
+                 }
+	   	  //std::cout << "Core: "<< int(core_id) << ": "<< os_current[core_id] << ":" << sc_core::sc_time_stamp().value() << std::endl;
+	   	  //std::cout << os_current[core_id] << std::endl;
+		}
+
+             }
 #ifdef OS_STATISTICS_ON
             if (last_sched_task[core_id] != os_current[core_id]) {
 
 		if(NodeID==0)//print out the client context switches
 		{
+                
 		  //std::cout <<  "Context switches happen at time: " << sc_core::sc_time_stamp().value() <<std::endl;
-	   	  //std::cout << "Server: " << last_sched_task[core_id] << "->" << os_current[core_id] << " : " << sc_core::sc_time_stamp().value() << std::endl;
+	   	  //std::cout << "Switch: " << last_sched_task[core_id] << "->" << os_current[core_id] << " : " << sc_core::sc_time_stamp().to_seconds() << std::endl;
 	   	  //std::cout << "Core: "<< int(core_id) << ": "<< os_current[core_id] << ":" << sc_core::sc_time_stamp().value() << std::endl;
 	   	  //std::cout << os_current[core_id] << std::endl;
 		}
