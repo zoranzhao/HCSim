@@ -11,6 +11,8 @@ all:
 	set -e ; for d in $(SUBDIRS); do	\
 	  $(MAKE) -C $$d ;			\
 	done
+	-$(RM) -rf lib
+	mkdir lib
 	-$(LN) ../src/$(TARGET) lib/$(TARGET)
 
 test:
